@@ -19,9 +19,16 @@ const IuranSyncPanel: React.FC = () => {
     
     try {
       const result = await iuranUtils.syncIuranData();
-      setSyncResult(result);
+      if (result.error) {
+        setSyncResult({ error: result.error.message || 'Gagal melakukan sinkronisasi' });
+      } else {
+        setSyncResult({ 
+          message: result.data?.message || 'Sinkronisasi berhasil dilakukan',
+          data: result.data 
+        });
+      }
     } catch (error) {
-      setSyncResult({ error: 'Gagal melakukan sinkronisasi' });
+      setSyncResult({ error: error instanceof Error ? error.message : 'Gagal melakukan sinkronisasi' });
     } finally {
       setIsLoading(false);
     }
@@ -33,9 +40,16 @@ const IuranSyncPanel: React.FC = () => {
     
     try {
       const result = await iuranUtils.generateMonthlyIuran(selectedMonth, selectedYear);
-      setSyncResult(result);
+      if (result.error) {
+        setSyncResult({ error: result.error.message || 'Gagal generate iuran' });
+      } else {
+        setSyncResult({ 
+          message: result.data?.message || 'Generate iuran berhasil',
+          data: result.data 
+        });
+      }
     } catch (error) {
-      setSyncResult({ error: 'Gagal generate iuran' });
+      setSyncResult({ error: error instanceof Error ? error.message : 'Gagal generate iuran' });
     } finally {
       setIsLoading(false);
     }
@@ -47,9 +61,21 @@ const IuranSyncPanel: React.FC = () => {
     
     try {
       const results = await iuranUtils.generateIuranForYear(selectedYear);
-      setSyncResult({ data: results, message: `Generate iuran untuk tahun ${selectedYear} selesai` });
+      const hasErrors = results.some(r => r.error);
+      if (hasErrors) {
+        const errorMessages = results
+          .filter(r => r.error)
+          .map(r => `${r.month}: ${r.error.message || 'Error'}`)
+          .join(', ');
+        setSyncResult({ error: `Beberapa bulan gagal: ${errorMessages}` });
+      } else {
+        setSyncResult({ 
+          message: `Generate iuran untuk tahun ${selectedYear} selesai`,
+          data: results 
+        });
+      }
     } catch (error) {
-      setSyncResult({ error: 'Gagal generate iuran tahunan' });
+      setSyncResult({ error: error instanceof Error ? error.message : 'Gagal generate iuran tahunan' });
     } finally {
       setIsLoading(false);
     }
@@ -150,7 +176,9 @@ const IuranSyncPanel: React.FC = () => {
               <p className={`text-sm ${
                 syncResult.error ? 'text-red-700' : 'text-green-700'
               }`}>
-                {syncResult.error || syncResult.message || 'Sinkronisasi berhasil dilakukan'}
+                {typeof syncResult.error === 'string' ? syncResult.error : 
+                 typeof syncResult.message === 'string' ? syncResult.message : 
+                 'Sinkronisasi berhasil dilakukan'}
               </p>
               {syncResult.data && Array.isArray(syncResult.data) && (
                 <div className="mt-2">
