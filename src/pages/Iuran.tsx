@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { DollarSign, Calendar, CheckCircle, XCircle, Search, Download } from 'lucide-react';
 import { useRealtimeIuran, useRealtimeWarga } from '../hooks/useRealtime';
 import { supabase } from '../lib/supabase';
+import IuranSyncPanel from '../components/IuranSyncPanel';
 import type { Iuran, Warga } from '../lib/supabase';
 
 const Iuran: React.FC = () => {
@@ -215,6 +216,16 @@ const Iuran: React.FC = () => {
           >
             Rekap Keuangan
           </button>
+          <button
+            onClick={() => setActiveTab('sync')}
+            className={`px-6 py-4 font-semibold border-b-2 transition-colors ${
+              activeTab === 'sync'
+                ? 'border-emerald-600 text-emerald-600'
+                : 'border-transparent text-gray-600 hover:text-emerald-600'
+            }`}
+          >
+            Sinkronisasi
+          </button>
         </div>
 
         {(activeTab === 'bulanan' || activeTab === 'sampah') && (
@@ -420,6 +431,12 @@ const Iuran: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+        )}
+
+        {activeTab === 'sync' && (
+          <div className="p-6">
+            <IuranSyncPanel />
           </div>
         )}
       </div>

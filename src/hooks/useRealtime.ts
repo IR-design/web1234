@@ -119,11 +119,3 @@ export function useRealtimeIuranSummary(tahun?: number) {
 export function useRealtimeIuranSettings() {
   return useRealtimeSubscription('iuran_settings', [])
 }
-
-export function useRealtimePaymentHistory(wargaId?: number) {
-  return useRealtimeSubscription(
-    'payment_history',
-    [],
-    wargaId ? { column: 'warga_id', value: wargaId } : undefined
-  )
-}

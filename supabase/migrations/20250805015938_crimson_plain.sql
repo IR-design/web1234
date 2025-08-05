@@ -17,26 +17,26 @@
 
 -- Insert sample warga data
 INSERT INTO warga (nama, alamat, telepon, email, pekerjaan, jumlah_anggota, status, tanggal_daftar) VALUES
-('Budi Santoso', 'Jl. Kalita Blok A No. 15', '081234567890', 'budi.santoso@email.com', 'Pegawai Swasta', 4, 'aktif', '2020-01-15'),
-('Siti Nurhaliza', 'Jl. Kalita Blok B No. 8', '081323456789', 'siti.nurhaliza@email.com', 'Guru', 3, 'aktif', '2020-02-20'),
-('Ahmad Wijaya', 'Jl. Kalita Blok C No. 22', '081434567890', 'ahmad.wijaya@email.com', 'Wiraswasta', 5, 'aktif', '2020-03-10'),
-('Rina Marlina', 'Jl. Kalita Blok A No. 7', '081545678901', 'rina.marlina@email.com', 'Dokter', 2, 'aktif', '2020-04-05'),
-('Dedi Kurniawan', 'Jl. Kalita Blok D No. 12', '081656789012', 'dedi.kurniawan@email.com', 'Insinyur', 4, 'aktif', '2020-05-18'),
-('Maya Sari', 'Jl. Kalita Blok B No. 18', '081767890123', 'maya.sari@email.com', 'Perawat', 3, 'aktif', '2020-06-25'),
-('Hendra Gunawan', 'Jl. Kalita Blok C No. 5', '081878901234', 'hendra.gunawan@email.com', 'Programmer', 2, 'aktif', '2020-07-12'),
-('Indira Putri', 'Jl. Kalita Blok A No. 25', '081989012345', 'indira.putri@email.com', 'Desainer', 3, 'aktif', '2020-08-30'),
-('Rudi Hermawan', 'Jl. Kalita Blok D No. 3', '082090123456', 'rudi.hermawan@email.com', 'Manager', 4, 'aktif', '2020-09-14'),
-('Lina Sari', 'Jl. Kalita Blok B No. 11', '082101234567', 'lina.sari@email.com', 'Akuntan', 2, 'aktif', '2020-10-22'),
-('Bambang Sutrisno', 'Jl. Kalita Blok C No. 17', '082212345678', 'bambang.sutrisno@email.com', 'Pensiunan', 2, 'aktif', '2021-01-08'),
-('Dewi Lestari', 'Jl. Kalita Blok A No. 9', '082323456789', 'dewi.lestari@email.com', 'Ibu Rumah Tangga', 5, 'aktif', '2021-02-15'),
-('Agus Setiawan', 'Jl. Kalita Blok D No. 20', '082434567890', 'agus.setiawan@email.com', 'Polisi', 3, 'aktif', '2021-03-20'),
-('Ratna Sari', 'Jl. Kalita Blok B No. 6', '082545678901', 'ratna.sari@email.com', 'Bidan', 4, 'aktif', '2021-04-10'),
-('Joko Widodo', 'Jl. Kalita Blok C No. 14', '082656789012', 'joko.widodo@email.com', 'Pedagang', 6, 'aktif', '2021-05-25'),
-('Sri Mulyani', 'Jl. Kalita Blok A No. 12', '082767890123', 'sri.mulyani@email.com', 'Pegawai Bank', 3, 'aktif', '2021-06-18'),
-('Andi Wijaya', 'Jl. Kalita Blok D No. 8', '082878901234', 'andi.wijaya@email.com', 'Arsitek', 2, 'aktif', '2021-07-30'),
-('Sari Indah', 'Jl. Kalita Blok B No. 21', '082989012345', 'sari.indah@email.com', 'Farmasis', 4, 'aktif', '2021-08-12'),
-('Doni Pratama', 'Jl. Kalita Blok C No. 9', '083090123456', 'doni.pratama@email.com', 'Teknisi', 3, 'aktif', '2021-09-05'),
-('Eka Putri', 'Jl. Kalita Blok A No. 18', '083101234567', 'eka.putri@email.com', 'Marketing', 2, 'aktif', '2021-10-20');
+('Budi Santoso', 'Jl. Kalita Blok A No. 15', '081234567890', 'budi.santoso@email.com', 'Pegawai Swasta', 4, 'nonaktif', '2020-01-15'),
+('Siti Nurhaliza', 'Jl. Kalita Blok B No. 8', '081323456789', 'siti.nurhaliza@email.com', 'Guru', 3, 'nonaktif', '2020-02-20'),
+('Ahmad Wijaya', 'Jl. Kalita Blok C No. 22', '081434567890', 'ahmad.wijaya@email.com', 'Wiraswasta', 5, 'nonaktif', '2020-03-10'),
+('Rina Marlina', 'Jl. Kalita Blok A No. 7', '081545678901', 'rina.marlina@email.com', 'Dokter', 2, 'nonaktif', '2020-04-05'),
+('Dedi Kurniawan', 'Jl. Kalita Blok D No. 12', '081656789012', 'dedi.kurniawan@email.com', 'Insinyur', 4, 'nonaktif', '2020-05-18'),
+('Maya Sari', 'Jl. Kalita Blok B No. 18', '081767890123', 'maya.sari@email.com', 'Perawat', 3, 'nonaktif', '2020-06-25'),
+('Hendra Gunawan', 'Jl. Kalita Blok C No. 5', '081878901234', 'hendra.gunawan@email.com', 'Programmer', 2, 'nonaktif', '2020-07-12'),
+('Indira Putri', 'Jl. Kalita Blok A No. 25', '081989012345', 'indira.putri@email.com', 'Desainer', 3, 'nonaktif', '2020-08-30'),
+('Rudi Hermawan', 'Jl. Kalita Blok D No. 3', '082090123456', 'rudi.hermawan@email.com', 'Manager', 4, 'nonaktif', '2020-09-14'),
+('Lina Sari', 'Jl. Kalita Blok B No. 11', '082101234567', 'lina.sari@email.com', 'Akuntan', 2, 'nonaktif', '2020-10-22'),
+('Bambang Sutrisno', 'Jl. Kalita Blok C No. 17', '082212345678', 'bambang.sutrisno@email.com', 'Pensiunan', 2, 'nonaktif', '2021-01-08'),
+('Dewi Lestari', 'Jl. Kalita Blok A No. 9', '082323456789', 'dewi.lestari@email.com', 'Ibu Rumah Tangga', 5, 'nonaktif', '2021-02-15'),
+('Agus Setiawan', 'Jl. Kalita Blok D No. 20', '082434567890', 'agus.setiawan@email.com', 'Polisi', 3, 'nonaktif', '2021-03-20'),
+('Ratna Sari', 'Jl. Kalita Blok B No. 6', '082545678901', 'ratna.sari@email.com', 'Bidan', 4, 'nonaktif', '2021-04-10'),
+('Joko Widodo', 'Jl. Kalita Blok C No. 14', '082656789012', 'joko.widodo@email.com', 'Pedagang', 6, 'nonaktif', '2021-05-25'),
+('Sri Mulyani', 'Jl. Kalita Blok A No. 12', '082767890123', 'sri.mulyani@email.com', 'Pegawai Bank', 3, 'nonaktif', '2021-06-18'),
+('Andi Wijaya', 'Jl. Kalita Blok D No. 8', '082878901234', 'andi.wijaya@email.com', 'Arsitek', 2, 'nonaktif', '2021-07-30'),
+('Sari Indah', 'Jl. Kalita Blok B No. 21', '082989012345', 'sari.indah@email.com', 'Farmasis', 4, 'nonaktif', '2021-08-12'),
+('Doni Pratama', 'Jl. Kalita Blok C No. 9', '083090123456', 'doni.pratama@email.com', 'Teknisi', 3, 'nonaktif', '2021-09-05'),
+('Eka Putri', 'Jl. Kalita Blok A No. 18', '083101234567', 'eka.putri@email.com', 'Marketing', 2, 'nonaktif', '2021-10-20');
 
 -- Insert sample iuran data for each warga (January 2025)
 INSERT INTO iuran (warga_id, bulan, tahun, jenis, jumlah, status, tanggal_bayar) 

@@ -119,6 +119,40 @@ export const iuranUtils = {
     return { data, error };
   },
 
+  // Sync all iuran data
+  async syncIuranData() {
+    const currentYear = new Date().getFullYear();
+    const currentMonth = new Date().toLocaleDateString('id-ID', { month: 'long' });
+    
+    const { data, error } = await supabase.rpc('generate_monthly_iuran', {
+      p_bulan: currentMonth,
+      p_tahun: currentYear
+    });
+    
+    return { data, error };
+  },
+
+  // Auto generate iuran for multiple months
+  async generateIuranForYear(tahun: number) {
+    const months = [
+      'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+      'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+    ];
+    
+    const results = [];
+    
+    for (const month of months) {
+      const { data, error } = await supabase.rpc('generate_monthly_iuran', {
+        p_bulan: month,
+        p_tahun: tahun
+      });
+      
+      results.push({ month, data, error });
+    }
+    
+    return results;
+  },
+
   // Update payment status
   async updatePaymentStatus(iuranId: number, status: 'lunas' | 'belum') {
     const updateData: any = {
